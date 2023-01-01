@@ -1,3 +1,4 @@
+import { BrowserRouter } from "react-router-dom"
 import "./App.css"
 import Header from "./components/Header"
 import Pages from "./Pages/Pages"
@@ -5,8 +6,10 @@ import Pages from "./Pages/Pages"
 function App() {
 	return (
 		<div>
-			<Header />
-			<Pages />
+			<BrowserRouter>
+				<Header />
+				<Pages />
+			</BrowserRouter>
 		</div>
 	)
 }
