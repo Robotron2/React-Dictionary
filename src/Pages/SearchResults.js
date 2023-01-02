@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import Header from "../components/Header"
 import Loading from "../components/Loading"
+import Home from "./Home"
 
 const Results = () => {
 	const [results, setResults] = useState([])
@@ -30,6 +30,7 @@ const Results = () => {
 
 	return (
 		<div>
+			<Home />
 			{isLoading && <Loading />}
 
 			{!isLoading &&
