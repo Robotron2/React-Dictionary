@@ -4,7 +4,6 @@ import Home from "./Home"
 const Pages = () => {
 	return (
 		<div className="container">
-			<Home />
 			<Routes>
 				<Route path="/" element={<Home />} />
 			</Routes>
