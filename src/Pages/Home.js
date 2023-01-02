@@ -1,7 +1,7 @@
 const Home = () => {
 	return (
-		<div>
-			<h3>Home</h3>
+		<div className="container">
+			<input type="text" placeholder="Enter an English Word" className="form-control " />
 		</div>
 	)
 }

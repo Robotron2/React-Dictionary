@@ -3,22 +3,43 @@ import { Link } from "react-router-dom"
 const Header = () => {
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-				<Link className="navbar-brand">RoboDictionary</Link>
-				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon"></span>
-				</button>
-				<div className="collapse navbar-collapse" id="navbarNav">
-					<ul className="navbar-nav ml-auto">
-						<li className="nav-item">
-							<Link className="nav-link">History</Link>
-						</li>
-						<li className="nav-item">
-							<Link className="nav-link">About App</Link>
-						</li>
-					</ul>
-				</div>
-			</nav>
+			<header>
+				<nav className="light-blue lighten-1" role="navigation">
+					<div className="nav-wrapper container">
+						<Link id="logo-container" className="brand-logo">
+							RoboDict
+						</Link>
+						<ul className="right hide-on-med-and-down">
+							<li>
+								<Link>History About Contact </Link>
+							</li>
+							<li>
+								<Link>History About Contact </Link>
+							</li>
+							<li>
+								<Link>History About Contact </Link>
+							</li>
+						</ul>
+						<div className="sidenav" id="nav-mobile">
+							<ul className="pt-3">
+								<li>
+									<Link>History About Contact </Link>
+								</li>
+								<li>
+									<Link>History About Contact </Link>
+								</li>
+								<li>
+									<Link>History About Contact </Link>
+								</li>
+							</ul>
+						</div>
+
+						<Link data-target="nav-mobile" className="sidenav-trigger">
+							<i className="material-icons">menu</i>
+						</Link>
+					</div>
+				</nav>
+			</header>
 		</div>
 	)
 }

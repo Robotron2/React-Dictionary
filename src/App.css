@@ -6,6 +6,6 @@
 	box-sizing: border-box;
 }
 
-nav {
-	padding: 0.5% 1.5% !important;
+.pt-3 {
+	padding-top: 4rem;
 }
