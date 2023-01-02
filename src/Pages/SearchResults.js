@@ -47,7 +47,7 @@ const Results = () => {
 							{result.phonetic === undefined && <div className="myclass">{result.phonetics[1].text}</div>}
 							{result.meanings !== undefined && <div>{result.meanings[0].partOfSpeech}</div>}
 							{result.meanings !== undefined && (
-								<div>
+								<div className="flow-text">
 									<div>
 										<h4>
 											<em>definitions</em>
@@ -57,10 +57,11 @@ const Results = () => {
 										return (
 											<div key={i + 1}>
 												<div>
-													<em>{i + 1}.</em>
-													<h6>{definition.definition}</h6>
+													<h6 style={{ margin: "1.1rem" }}>
+														<em>{i + 1}. </em>
+														{definition.definition}
+													</h6>
 												</div>
-												<br />
 											</div>
 										)
 									})}
