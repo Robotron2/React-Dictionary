@@ -26,6 +26,10 @@ const Results = () => {
 		fetchData(params.searchWord)
 	}, [params.searchWord])
 
+	let [meaningsOne, meaningsTwo, meaningsThree, meaningsFour] = results
+	console.log(meaningsOne)
+	console.log(meaningsTwo)
+
 	return (
 		<div>
 			{isLoading && <Loading />}
@@ -45,6 +49,18 @@ const Results = () => {
 
 							{result.phonetic !== undefined && <div className="myclass">{result.phonetic}</div>}
 							{result.phonetic === undefined && <div className="myclass">{result.phonetics[1].text}</div>}
+
+							{/* {meaningsOne.meanings !== undefined && <div className="myclass">{meaningsOne.meanings[0].partOfSpeech}</div>}
+							{meaningsOne.meanings !== undefined && <div className="myclass">{meaningsOne.meanings[0].partOfSpeech}</div>} */}
+
+							{meaningsOne.meanings &&
+								meaningsOne.meanings.map((meaning, i) => {
+									return (
+										<div key={i + 1}>
+											<h3 class="flow-text">Part of speech: {meaning.partOfSpeech}</h3>
+										</div>
+									)
+								})}
 						</div>
 					)
 				})}
