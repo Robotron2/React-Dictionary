@@ -13,20 +13,26 @@ const Results = () => {
 				return res.json()
 			})
 			.then((data) => {
-				console.log(data) // [{}]
-				setResults(data[0])
+				// [{}]
+				setResults(data)
 			})
 	}
+	// console.log(results)
 
 	useEffect(() => {
 		fetchData(params.searchWord)
 	}, [params.searchWord])
 
-	//console.log(params.searchWord) // Dynamic value
-
 	return (
 		<div>
-			<h3>Result</h3>
+			<h1>Hello</h1>
+			{results.map((result, i) => {
+				return (
+					<div key={i + 1}>
+						<h1>{result.word}</h1>
+					</div>
+				)
+			})}
 		</div>
 	)
 }
