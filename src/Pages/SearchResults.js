@@ -20,7 +20,7 @@ const Results = () => {
 				setIsLoading(false)
 			})
 	}
-	// console.log(results)
+	// console.log(results[0].meanings[0].synonyms.length)
 
 	useEffect(() => {
 		fetchData(params.searchWord)
@@ -50,7 +50,7 @@ const Results = () => {
 								<div className="flow-text">
 									<div>
 										<h4>
-											<em>definitions</em>
+											<em>definition(s)</em>
 										</h4>
 									</div>
 									{result.meanings[0].definitions.map((definition, i) => {
@@ -58,8 +58,29 @@ const Results = () => {
 											<div key={i + 1}>
 												<div>
 													<h6 style={{ margin: "1.1rem" }}>
-														<em>{i + 1}. </em>
+														<strong>{i + 1}. </strong>
 														{definition.definition}
+													</h6>
+												</div>
+											</div>
+										)
+									})}
+								</div>
+							)}
+							{result.meanings[0].synonyms !== undefined && result.meanings[0].synonyms.length !== 0 && (
+								<div className="flow-text">
+									<div>
+										<h4>
+											<em>Synonyms(s)</em>
+										</h4>
+									</div>
+									{result.meanings[0].synonyms.map((synonym, i) => {
+										return (
+											<div key={i + 1}>
+												<div>
+													<h6 style={{ margin: "1.1rem" }}>
+														<strong>{i + 1}. </strong>
+														{synonym}
 													</h6>
 												</div>
 											</div>
