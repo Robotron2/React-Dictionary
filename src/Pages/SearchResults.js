@@ -38,13 +38,21 @@ const Results = () => {
 								<h1 class="blue-text lighten-1">
 									{result.word}
 									<span>
-										<em>{i + 1}</em>
+										<em>{`${i + 1}  `}</em>
 									</span>
 								</h1>
 							</div>
 
-							{result.phonetic !== undefined && <div className="myclass">{result.phonetic}</div>}
-							{result.phonetic === undefined && <div className="myclass">{result.phonetics[1].text}</div>}
+							{result.phonetic !== undefined && (
+								<div className="myclass">
+									<p>{result.phonetic}</p>
+								</div>
+							)}
+							{result.phonetic === undefined && (
+								<div className="myclass">
+									<p>{result.phonetics[1].text}</p>
+								</div>
+							)}
 							{result.meanings !== undefined && <div>{result.meanings[0].partOfSpeech}</div>}
 							{result.meanings !== undefined && (
 								<div className="flow-text">
@@ -96,25 +104,3 @@ const Results = () => {
 }
 
 export default Results
-
-// {meaningsOne.meanings !== undefined && <div className="myclass">{meaningsOne.meanings[0].partOfSpeech}</div>}
-// 							{meaningsOne.meanings !== undefined && <div className="myclass">{meaningsOne.meanings[0].partOfSpeech}</div>}
-
-// 							{meaningsOne !== undefined &&
-// 								meaningsOne.meanings !== undefined &&
-// 								meaningsOne.meanings.map((meaning, i) => {
-// 									return (
-// 										<div key={i + 1}>
-// 											<h3 class="flow-text">Part of speech: {meaning.partOfSpeech}</h3>
-// 										</div>
-// 									)
-// 								})}
-// 							{meaningsTwo !== undefined &&
-// 								meaningsTwo.meanings !== undefined &&
-// 								meaningsTwo.meanings.map((meaning, i) => {
-// 									return (
-// 										<div key={i + 1}>
-// 											<h3 class="flow-text">Part of speech: {meaning.partOfSpeech}</h3>
-// 										</div>
-// 									)
-// 								})}
