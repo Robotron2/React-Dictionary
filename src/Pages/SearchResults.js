@@ -46,7 +46,26 @@ const Results = () => {
 							{result.phonetic !== undefined && <div className="myclass">{result.phonetic}</div>}
 							{result.phonetic === undefined && <div className="myclass">{result.phonetics[1].text}</div>}
 							{result.meanings !== undefined && <div>{result.meanings[0].partOfSpeech}</div>}
-							{/* {result.meanings !== undefined && <div>{result.meanings[0].definitions}</div>} */}
+							{result.meanings !== undefined && (
+								<div>
+									<div>
+										<h4>
+											<em>definitions</em>
+										</h4>
+									</div>
+									{result.meanings[0].definitions.map((definition, i) => {
+										return (
+											<div key={i + 1}>
+												<div>
+													<em>{i + 1}.</em>
+													<h6>{definition.definition}</h6>
+												</div>
+												<br />
+											</div>
+										)
+									})}
+								</div>
+							)}
 						</div>
 					)
 				})}
