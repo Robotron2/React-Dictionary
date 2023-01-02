@@ -26,10 +26,6 @@ const Results = () => {
 		fetchData(params.searchWord)
 	}, [params.searchWord])
 
-	let [meaningsOne, meaningsTwo, meaningsThree, meaningsFour] = results
-	console.log(meaningsOne)
-	console.log(meaningsTwo)
-
 	return (
 		<div>
 			{isLoading && <Loading />}
@@ -37,7 +33,7 @@ const Results = () => {
 			{!isLoading &&
 				results.map((result, i) => {
 					return (
-						<div>
+						<div key={i + 1}>
 							<div className="myclass">
 								<h1 class="blue-text lighten-1">
 									{result.word}
@@ -49,18 +45,8 @@ const Results = () => {
 
 							{result.phonetic !== undefined && <div className="myclass">{result.phonetic}</div>}
 							{result.phonetic === undefined && <div className="myclass">{result.phonetics[1].text}</div>}
-
-							{/* {meaningsOne.meanings !== undefined && <div className="myclass">{meaningsOne.meanings[0].partOfSpeech}</div>}
-							{meaningsOne.meanings !== undefined && <div className="myclass">{meaningsOne.meanings[0].partOfSpeech}</div>} */}
-
-							{meaningsOne.meanings &&
-								meaningsOne.meanings.map((meaning, i) => {
-									return (
-										<div key={i + 1}>
-											<h3 class="flow-text">Part of speech: {meaning.partOfSpeech}</h3>
-										</div>
-									)
-								})}
+							{result.meanings !== undefined && <div>{result.meanings[0].partOfSpeech}</div>}
+							{/* {result.meanings !== undefined && <div>{result.meanings[0].definitions}</div>} */}
 						</div>
 					)
 				})}
@@ -69,3 +55,25 @@ const Results = () => {
 }
 
 export default Results
+
+// {meaningsOne.meanings !== undefined && <div className="myclass">{meaningsOne.meanings[0].partOfSpeech}</div>}
+// 							{meaningsOne.meanings !== undefined && <div className="myclass">{meaningsOne.meanings[0].partOfSpeech}</div>}
+
+// 							{meaningsOne !== undefined &&
+// 								meaningsOne.meanings !== undefined &&
+// 								meaningsOne.meanings.map((meaning, i) => {
+// 									return (
+// 										<div key={i + 1}>
+// 											<h3 class="flow-text">Part of speech: {meaning.partOfSpeech}</h3>
+// 										</div>
+// 									)
+// 								})}
+// 							{meaningsTwo !== undefined &&
+// 								meaningsTwo.meanings !== undefined &&
+// 								meaningsTwo.meanings.map((meaning, i) => {
+// 									return (
+// 										<div key={i + 1}>
+// 											<h3 class="flow-text">Part of speech: {meaning.partOfSpeech}</h3>
+// 										</div>
+// 									)
+// 								})}
