@@ -13,6 +13,26 @@ const Home = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
+		// const userInput = {
+		//     inputWord: word,
+		//     status: true
+		// }
+		const checkHistory = localStorage.getItem("history")
+		const userInput = word
+		let wordsArray = []
+
+		if (checkHistory) {
+			wordsArray = JSON.parse(localStorage.getItem("history"))
+			wordsArray.push(userInput)
+			localStorage.setItem("history", JSON.stringify(wordsArray))
+			console.log(wordsArray)
+		} else {
+			wordsArray.push(word)
+			localStorage.setItem("history", JSON.stringify(wordsArray))
+			console.log(wordsArray)
+		}
+
+		setTimeout(() => setWord(""), 1500)
 		navigate(`/search/${word}`)
 	}
 

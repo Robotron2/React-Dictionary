@@ -11,7 +11,7 @@ const Header = () => {
 						</Link>
 						<ul className="right hide-on-med-and-down">
 							<li>
-								<Link>History About Contact </Link>
+								<Link to={"/history"}>History </Link>
 							</li>
 							<li>
 								<Link>History About Contact </Link>
