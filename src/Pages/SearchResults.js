@@ -6,6 +6,7 @@ import Home from "./Home"
 const Results = () => {
 	const [results, setResults] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
+	const [checkFound, setCheckFound] = useState(true)
 	// const [checkResponse, setCheckResponse] = useState(true)
 	let params = useParams()
 
@@ -19,9 +20,15 @@ const Results = () => {
 			.then((data) => {
 				// [{}]
 				setResults(data)
+				if (data.title === "No Definitions Found") {
+					console.log(data.title)
+					setCheckFound(false)
+				}
+
 				setIsLoading(false)
 			})
 	}
+
 	// console.log(results[0].meanings[0].synonyms.length)
 
 	useEffect(() => {
@@ -33,7 +40,18 @@ const Results = () => {
 			<Home />
 			{isLoading && <Loading />}
 
+			{!checkFound && (
+				<div>
+					<div className="">
+						<h4 className="flow-text">No Definitions Found...</h4>
+						<h4 className="flow-text">Sorry pal, we couldn't find definitions for the word you were looking for.</h4>
+						<h4 className="flow-text">You can try the search again at later time or head to the web instead.</h4>
+					</div>
+				</div>
+			)}
+
 			{!isLoading &&
+				checkFound &&
 				results.map((result, i) => {
 					return (
 						<div key={i + 1}>
@@ -84,7 +102,9 @@ const Results = () => {
 								<div className="flow-text">
 									<div>
 										<h4>
-											<em>more....</em>
+											<small>
+												<em>more....</em>
+											</small>
 										</h4>
 									</div>
 									{result.meanings[1].definitions.map((definition, i) => {
