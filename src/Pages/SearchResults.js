@@ -13,6 +13,7 @@ const Results = () => {
 	// let searchUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${params.searchWord}`
 
 	const fetchData = async (word) => {
+		setIsLoading(true)
 		await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
 			.then((res) => {
 				return res.json()
