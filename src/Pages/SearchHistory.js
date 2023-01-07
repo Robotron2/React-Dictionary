@@ -15,11 +15,11 @@ const SearchHistory = () => {
 	// 	</div>
 	// )
 	return (
-		<div class="row">
+		<div class="row ">
 			{searchedWords.map((searchedWord, index) => {
 				return (
 					<div className="col s6 m3" key={index + 1}>
-						<div className="card-panel light-blue lighten-3">
+						<div className="card-panel light-blue lighten-3 myrowclass">
 							<span className="white-text">{searchedWord}</span>
 						</div>
 					</div>

@@ -45,3 +45,12 @@ h4 {
 		font-size: 0.6rem;
 	}
 }
+
+.myrowclass {
+	text-align: center;
+	font-size: 2rem;
+}
+
+.myrowclass:hover {
+	background-color: #29b6f6 !important;
+}
