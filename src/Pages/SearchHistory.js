@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const SearchHistory = () => {
 	const searchedWords = JSON.parse(localStorage.getItem("history"))
 	console.log(searchedWords)
@@ -19,9 +21,11 @@ const SearchHistory = () => {
 			{searchedWords.map((searchedWord, index) => {
 				return (
 					<div className="col s6 m3" key={index + 1}>
-						<div className="card-panel light-blue lighten-3 myrowclass">
-							<span className="white-text">{searchedWord}</span>
-						</div>
+						<Link to={`/search/${searchedWord}`}>
+							<div className="card-panel light-blue lighten-3 myrowclass">
+								<span className="white-text">{searchedWord}</span>
+							</div>
+						</Link>
 					</div>
 				)
 			})}
