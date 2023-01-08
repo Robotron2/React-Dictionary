@@ -53,4 +53,5 @@ h4 {
 
 .myrowclass:hover {
 	background-color: #29b6f6 !important;
+	transition: ease-in-out 0.45s;
 }
