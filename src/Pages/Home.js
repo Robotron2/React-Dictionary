@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 const Home = () => {
 	const [word, setWord] = useState("")
+	const [empty, setEmpty] = useState(false)
 
 	const navigate = useNavigate()
 
@@ -46,7 +47,12 @@ const Home = () => {
 		setTimeout(() => setWord(""), 1500)
 		// console.log(userInput === "")
 
-		navigate(`/search/${word}`)
+		if (userInput !== "") {
+			// setEmpty(false)
+			navigate(`/search/${word}`)
+		} else {
+			setEmpty(true)
+		}
 	}
 
 	return (
@@ -56,9 +62,15 @@ const Home = () => {
 					<input type="text" placeholder="Enter an English Word" value={word} onChange={handleChange} />
 				</div>
 			</form>
-			{/* <div>
-				<Button class="btn waves-effect wave-light btn-large light-blue lighten-1" name="Search" />
-			</div> */}
+			{empty && (
+				<div>
+					<div className="">
+						<h4 className="flow-text">No Definitions Found...</h4>
+						<h4 className="flow-text">Sorry pal, we couldn't find definitions for the word you were looking for.</h4>
+						<h4 className="flow-text">You can try the search again at later time or head to the web instead.</h4>
+					</div>
+				</div>
+			)}
 		</div>
 	)
 }
