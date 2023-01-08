@@ -23,9 +23,15 @@ const Home = () => {
 
 		if (checkHistory) {
 			wordsArray = JSON.parse(localStorage.getItem("history"))
-			wordsArray.push(userInput)
+
+			let filteredWord = wordsArray.filter((word) => word === userInput)
+			if (filteredWord.length === 0) {
+				wordsArray.push(userInput)
+			}
+			// console.log(filteredWord.length)
+
 			localStorage.setItem("history", JSON.stringify(wordsArray))
-			console.log(wordsArray)
+			// console.log(wordsArray)
 		} else {
 			wordsArray.push(word)
 			localStorage.setItem("history", JSON.stringify(wordsArray))

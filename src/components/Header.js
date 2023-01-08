@@ -6,7 +6,7 @@ const Header = () => {
 			<header>
 				<nav className="light-blue lighten-1" role="navigation">
 					<div className="nav-wrapper container">
-						<Link id="logo-container" className="brand-logo">
+						<Link id="logo-container" className="brand-logo" to={"/"}>
 							RoboDict
 						</Link>
 						<ul className="right hide-on-med-and-down">
@@ -14,22 +14,22 @@ const Header = () => {
 								<Link to={"/history"}>History </Link>
 							</li>
 							<li>
-								<Link>History About Contact </Link>
+								<Link> About </Link>
 							</li>
 							<li>
-								<Link>History About Contact </Link>
+								<Link> Contact </Link>
 							</li>
 						</ul>
 						<div className="sidenav" id="nav-mobile">
 							<ul className="pt-3">
 								<li>
-									<Link>History About Contact </Link>
+									<Link to={"/history"}>History </Link>
 								</li>
 								<li>
-									<Link>History About Contact </Link>
+									<Link> About </Link>
 								</li>
 								<li>
-									<Link>History About Contact </Link>
+									<Link> Contact </Link>
 								</li>
 							</ul>
 						</div>

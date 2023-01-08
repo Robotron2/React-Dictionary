@@ -17,7 +17,7 @@ const SearchHistory = () => {
 	// 	</div>
 	// )
 	return (
-		<div class="row ">
+		<div className="row ">
 			{searchedWords.map((searchedWord, index) => {
 				return (
 					<div className="col s6 m3" key={index + 1}>
