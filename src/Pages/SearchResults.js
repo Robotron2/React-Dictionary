@@ -22,8 +22,10 @@ const Results = () => {
 				// [{}]
 				setResults(data)
 				if (data.title === "No Definitions Found") {
-					console.log(data.title)
+					// console.log(data.title)
 					setCheckFound(false)
+				} else {
+					setCheckFound(true)
 				}
 
 				setIsLoading(false)

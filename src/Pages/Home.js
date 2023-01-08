@@ -49,10 +49,11 @@ const Home = () => {
 
 		if (userInput !== "") {
 			// setEmpty(false)
-			navigate(`/search/${word}`)
+			navigate(`/search/${userInput}`)
 		} else {
 			setEmpty(true)
 		}
+		console.log(userInput)
 	}
 
 	return (
