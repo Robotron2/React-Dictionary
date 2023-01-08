@@ -18,16 +18,21 @@ const Home = () => {
 		//     status: true
 		// }
 		const checkHistory = localStorage.getItem("history")
-		const userInput = word
+		const userInput = word.split(" ").join("")
 		let wordsArray = []
 
 		if (checkHistory) {
 			wordsArray = JSON.parse(localStorage.getItem("history"))
 
 			let filteredWord = wordsArray.filter((word) => word === userInput)
-			if (filteredWord.length === 0) {
+			if (filteredWord.length === 0 && userInput !== "") {
 				wordsArray.push(userInput)
 			}
+
+			// if (word) {
+
+			// }
+			// console.log(word.split(" ").join(""))
 			// console.log(filteredWord.length)
 
 			localStorage.setItem("history", JSON.stringify(wordsArray))
@@ -35,10 +40,12 @@ const Home = () => {
 		} else {
 			wordsArray.push(word)
 			localStorage.setItem("history", JSON.stringify(wordsArray))
-			console.log(wordsArray)
+			// console.log(wordsArray)
 		}
 
 		setTimeout(() => setWord(""), 1500)
+		// console.log(userInput === "")
+
 		navigate(`/search/${word}`)
 	}
 
