@@ -12,7 +12,7 @@ const Home = () => {
 		setWord(e.target.value)
 	}
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
 		// const userInput = {
 		//     inputWord: word,
@@ -22,27 +22,33 @@ const Home = () => {
 		const userInput = word.split(" ").join("")
 		let wordsArray = []
 
-		if (checkHistory) {
-			wordsArray = JSON.parse(localStorage.getItem("history"))
+		await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${userInput}`)
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.title !== "No Definitions Found") {
+					if (checkHistory) {
+						wordsArray = JSON.parse(localStorage.getItem("history"))
 
-			let filteredWord = wordsArray.filter((word) => word === userInput)
-			if (filteredWord.length === 0 && userInput !== "") {
-				wordsArray.push(userInput)
-			}
+						let filteredWord = wordsArray.filter((word) => word === userInput)
+						if (filteredWord.length === 0 && userInput !== "") {
+							wordsArray.push(userInput)
+						}
 
-			// if (word) {
+						// if (word) {
 
-			// }
-			// console.log(word.split(" ").join(""))
-			// console.log(filteredWord.length)
+						// }
+						// console.log(word.split(" ").join(""))
+						// console.log(filteredWord.length)
 
-			localStorage.setItem("history", JSON.stringify(wordsArray))
-			// console.log(wordsArray)
-		} else {
-			wordsArray.push(word)
-			localStorage.setItem("history", JSON.stringify(wordsArray))
-			// console.log(wordsArray)
-		}
+						localStorage.setItem("history", JSON.stringify(wordsArray))
+						// console.log(wordsArray)
+					} else {
+						wordsArray.push(word)
+						localStorage.setItem("history", JSON.stringify(wordsArray))
+						// console.log(wordsArray)
+					}
+				}
+			})
 
 		setTimeout(() => setWord(""), 1500)
 		// console.log(userInput === "")
@@ -53,7 +59,7 @@ const Home = () => {
 		} else {
 			setEmpty(true)
 		}
-		console.log(userInput)
+		// console.log(userInput)
 	}
 
 	return (
