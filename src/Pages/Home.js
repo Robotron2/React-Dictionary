@@ -67,8 +67,8 @@ const Home = () => {
 				<div>
 					<div className="">
 						<h4 className="flow-text">No Definitions Found...</h4>
-						<h4 className="flow-text">Sorry pal, we couldn't find definitions for the word you were looking for.</h4>
-						<h4 className="flow-text">You can try the search again at later time or head to the web instead.</h4>
+						<h4 className="flow-text">Sorry pal, we couldn't find definitions for empty strings.</h4>
+						<h4 className="flow-text">You can try the search again at later time.</h4>
 					</div>
 				</div>
 			)}

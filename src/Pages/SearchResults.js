@@ -21,11 +21,11 @@ const Results = () => {
 			.then((data) => {
 				// [{}]
 				setResults(data)
-				if (data.title === "No Definitions Found") {
+				if (data.title !== "No Definitions Found") {
+					setCheckFound(true)
+				} else if (data.title === "No Definitions Found") {
 					// console.log(data.title)
 					setCheckFound(false)
-				} else {
-					setCheckFound(true)
 				}
 
 				setIsLoading(false)
