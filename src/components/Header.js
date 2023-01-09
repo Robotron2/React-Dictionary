@@ -11,6 +11,9 @@ const Header = () => {
 						</Link>
 						<ul className="right hide-on-med-and-down">
 							<li>
+								<Link to={"/"}>Word of the Day </Link>
+							</li>
+							<li>
 								<Link to={"/history"}>History </Link>
 							</li>
 							<li>
@@ -22,6 +25,9 @@ const Header = () => {
 						</ul>
 						<div className="sidenav" id="nav-mobile">
 							<ul className="pt-3">
+								<li>
+									<Link to={"/"}>Word of the Day </Link>
+								</li>
 								<li>
 									<Link to={"/history"}>History </Link>
 								</li>
