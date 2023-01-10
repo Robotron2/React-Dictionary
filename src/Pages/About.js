@@ -3,7 +3,7 @@ const About = () => {
 		<div>
 			<div className="flow-text" style={{ padding: "2vmin" }}>
 				<div style={{ textAlign: "center", padding: "1rem" }}>
-					<h4 className="about-header" style={{ color: "black" }}>
+					<h4 className="about-header" style={{ color: "black", fontSize: "2rem" }}>
 						Robotron's Dictionary <span style={{ fontSize: "5vmin", color: "red", padding: "2px" }}>.</span>
 					</h4>
 				</div>
