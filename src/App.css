@@ -12,6 +12,7 @@ body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+	font-family: "Montserrat", sans-serif;
 }
 
 .pt-3 {
@@ -20,6 +21,7 @@ body {
 
 h4 {
 	color: grey;
+	font-family: "Open Sans", sans-serif;
 }
 
 .myclass {
