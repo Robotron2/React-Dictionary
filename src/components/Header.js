@@ -1,6 +1,19 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import WordList from "./random"
 
 const Header = () => {
+	const navigate = useNavigate()
+	const wordList = WordList
+
+	function handleClick() {
+		let randomWordIndex = Math.floor(Math.random() * 1952)
+		console.log(randomWordIndex)
+		console.log(wordList[randomWordIndex])
+		let randomWord = wordList[randomWordIndex]
+
+		navigate(`/search/${randomWord}`)
+	}
+
 	return (
 		<div>
 			<header>
@@ -10,8 +23,8 @@ const Header = () => {
 							RoboDict
 						</Link>
 						<ul className="right hide-on-med-and-down">
-							<li>
-								<Link to={"/"}>Word of the Day </Link>
+							<li onClick={handleClick}>
+								<Link>Word of the Day </Link>
 							</li>
 							<li>
 								<Link to={"/history"}>History </Link>

@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+// import WordList from "../components/random"
 
 const SearchHistory = () => {
 	const searchedWords = JSON.parse(localStorage.getItem("history"))
-	console.log(searchedWords)
+	// console.log(searchedWords)
+	// const wordList = WordList
+	// console.log(wordList)
 
 	// return (
 	// 	<div>

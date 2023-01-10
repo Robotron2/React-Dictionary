@@ -1,4 +1,4 @@
-let wordList = [
+let WordList = [
 	// Borrowed from random-words password generator which borrowed it from wherever
 	"ability",
 	"able",
@@ -1953,3 +1953,4 @@ let wordList = [
 	"zoo",
 	"zulu"
 ]
+export default WordList
