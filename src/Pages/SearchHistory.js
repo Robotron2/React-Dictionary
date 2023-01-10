@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
 const SearchHistory = () => {
 	const searchedWords = JSON.parse(localStorage.getItem("history"))
@@ -17,7 +18,7 @@ const SearchHistory = () => {
 	// 	</div>
 	// )
 	return (
-		<div className="row ">
+		<motion.div className="row " animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
 			{searchedWords.map((searchedWord, index) => {
 				return (
 					<div className="col s6 m3" key={index + 1}>
@@ -29,7 +30,7 @@ const SearchHistory = () => {
 					</div>
 				)
 			})}
-		</div>
+		</motion.div>
 	)
 }
 

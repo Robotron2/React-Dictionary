@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 // import Button from "../components/Button"
@@ -70,13 +71,13 @@ const Home = () => {
 				</div>
 			</form>
 			{empty && (
-				<div>
+				<motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
 					<div className="">
 						<h4 className="flow-text">No Definitions Found...</h4>
 						<h4 className="flow-text">Sorry pal, we couldn't find definitions for empty strings.</h4>
 						<h4 className="flow-text">You can try the search again at later time.</h4>
 					</div>
-				</div>
+				</motion.div>
 			)}
 		</div>
 	)
