@@ -38,8 +38,8 @@ const Header = () => {
 						</ul>
 						<div className="sidenav" id="nav-mobile">
 							<ul className="pt-3">
-								<li>
-									<Link to={"/"}>Word of the Day </Link>
+								<li onClick={handleClick}>
+									<Link>Word of the Day </Link>
 								</li>
 								<li>
 									<Link to={"/history"}>History </Link>
