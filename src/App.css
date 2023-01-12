@@ -13,6 +13,7 @@ body {
 	min-height: 100vh;
 	flex-direction: column;
 	font-family: "Montserrat", sans-serif;
+	position: relative;
 }
 
 .pt-3 {
@@ -63,4 +64,5 @@ h4 {
 	bottom: 0;
 	width: 100%;
 	text-align: center;
+	margin: auto 20px;
 }
